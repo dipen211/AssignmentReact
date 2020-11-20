@@ -4,8 +4,6 @@ import ReactDataGrid from '@inovua/reactdatagrid-enterprise';
 import '@inovua/reactdatagrid-enterprise/index.css';
 
 import NumberFilter from '@inovua/reactdatagrid-community/NumberFilter';
-//import SelectFilter from '@inovua/reactdatagrid-community/SelectFilter';
-//import DateFilter from '@inovua/reactdatagrid-community/DateFilter';
 
 const toArray = selected => Object.keys(selected).map(id => id * 1);
 
@@ -60,7 +58,7 @@ const gridStyle = { minHeight: 450 }
 
 const DataList = () => {
 
-    const [autoHide, setAutoHide] = useState(false);
+    const [autoHide, setAutoHide] = useState(true);
 
     const scrollProps = Object.assign({}, ReactDataGrid.defaultProps.scrollProps, {
         autoHide: autoHide
@@ -72,7 +70,7 @@ const DataList = () => {
         setSelected(selected)
     }, [])
     return (
-        <div>
+        <>
             <ReactDataGrid
                 idProperty="id"
                 style={gridStyle}
@@ -87,7 +85,7 @@ const DataList = () => {
                 scrollProps={scrollProps}
             />
             <p>Selected rows: {JSON.stringify(toArray(selected))}.</p>
-        </div>
+        </>
     );
 }
 export default DataList;

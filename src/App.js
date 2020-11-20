@@ -1,12 +1,15 @@
 import React from 'react';
 import './App.css';
-import DataList from './component/DataGrid/DataList'
+import LoginForm from './component/Login/Login';
+import {BrowserRouter} from 'react-router-dom';
 
 function App() {
-  return (
+  return ( 
+    <BrowserRouter>
     <div className="App">
-      <DataList />
+      <LoginForm />
     </div>
+    </BrowserRouter>
   );
 }
 
