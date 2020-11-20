@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from 'react';
+//import CustomToolbar from './CustomToolba';
 
 import ReactDataGrid from '@inovua/reactdatagrid-enterprise';
 import '@inovua/reactdatagrid-enterprise/index.css';
@@ -83,6 +84,11 @@ const DataList = () => {
                 pagination
                 defaultLimit={10}
                 scrollProps={scrollProps}
+                // toolbar={<CustomToolbar 
+                //     onAddRow={this.handleAddRow.bind(this)}
+                //     onDeleteRow={this.handleDeleteRow.bind(this)}
+                //     deleteRowButtonText="Delete Selected">
+                //     </CustomToolbar>}
             />
             <p>Selected rows: {JSON.stringify(toArray(selected))}.</p>
         </>
